@@ -57,7 +57,8 @@ Build/*/**
 !Build/**/*.ico
 
 # Unreal Engine asset files (binary files that are large)
-
+*.uasset
+*.umap
 *.ubulk
 *.uexp
 
