@@ -61,6 +61,12 @@ Build/*/**
 *.umap
 *.ubulk
 *.uexp
+#
+# --- Allowlist for PCG assets (track these despite global ignores) ---
+!Content/PCG/**/*.uasset
+!Content/PCG/**/*.umap
+!Content/PCG/**/*.ubulk
+!Content/PCG/**/*.uexp
 
 # Built data for maps
 *_BuiltData.uasset
