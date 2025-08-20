@@ -68,6 +68,7 @@ Build/*/**
 !Content/PCG/**/*.ubulk
 !Content/PCG/**/*.uexp
 !Content/PCG/*
+!Content/PCG/**
 
 # Built data for maps
 *_BuiltData.uasset
