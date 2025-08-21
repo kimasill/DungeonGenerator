@@ -2,4 +2,6 @@
 * text=auto
 # Use Git LFS for Unreal binary assets under Content/PCG
 Content/PCG/** filter=lfs diff=lfs merge=lfs -text
+*.uasset merge=ours -text
+*.umap   merge=ours -text
 * !text !filter !merge !diff
