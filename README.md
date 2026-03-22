@@ -104,9 +104,6 @@ PCGDungeonGenerator는 언리얼 엔진의 **PCG/PCGEx** 시스템을 활용해 
 * 포인트는 **FeedBack Loop**를 통해 다음 루프에서 재사용
 * Depth 수치만큼 반복 실행되어 부모-자식 오브젝트 재귀 배치
 * 부모 오브젝트 인덱스(TargetObjectIndex)로 특정 오브젝트를 자식으로 지정 가능
-
-![Depth Graph](docs/images/depth-graph.png)
-
 ---
 
 ## 프로젝트 구조
