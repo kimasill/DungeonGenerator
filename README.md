@@ -3,8 +3,6 @@
 **Unreal Engine 5.6+ Procedural Dungeon Generator Plugin**
 PCGDungeonGenerator는 언리얼 엔진의 **PCG/PCGEx** 시스템을 활용해 다층 구조의 던전을 자동으로 생성하고, 다양한 파라미터와 데이터 에셋을 기반으로 구조물 및 오브젝트를 배치할 수 있도록 하는 플러그인입니다.
 
-![Demo Screenshot](docs/images/demo.png)
-
 ---
 
 ## 주요 기능 (Features)
