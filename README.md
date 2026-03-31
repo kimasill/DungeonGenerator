@@ -13,6 +13,12 @@
   </a>
 </p>
 
+<p align="center">
+  <a href="https://www.youtube.com/watch?v=cgXfvvlb2Uk" title="PCG Dungeon Generator 시연 영상" target="_blank" rel="noopener noreferrer">
+    <img src="https://img.youtube.com/vi/cgXfvvlb2Uk/maxresdefault.jpg" alt="PCG Dungeon Generator 시연 영상 (YouTube)" width="720" />
+  </a>
+</p>
+
 > 던전 파밍형 게임을 위한 **절차적 레벨 생성**을 목표로 한 UE5 PCG 플러그인 레포지토리입니다. 시연 영상·키 피처·제작 스토리는 [프로젝트 페이지](https://kimasill.github.io/projects/pcg-dungeon.html)에서, 그래프·파이프라인 세부는 아래 **Notion 가이드**에서 확인하시면 됩니다.
 
 ---
