@@ -68,6 +68,58 @@
 
 Seed, 그리드 규모, 생성 Depth 등을 에셋으로 분리합니다. 동일 구조로 Mansion / 게임룸 등 테마만 교체하면 전혀 다른 분위기가 됩니다.
 
+<details>
+<summary>UDungeonConfig — DataAsset 정의 (C++)</summary>
+
+```cpp
+// DungeonConfig.h
+UENUM(BlueprintType)
+enum class EDungeonObjectPlacement : uint8
+{
+    Floor, Wall, Ceiling, Corner, Top, Side
+};
+
+USTRUCT(BlueprintType)
+struct FDungeonObjectEntry
+{
+    GENERATED_BODY()
+
+    UPROPERTY(EditAnywhere) TSoftObjectPtr<UStaticMesh> Mesh;
+    UPROPERTY(EditAnywhere) EDungeonObjectPlacement Placement = EDungeonObjectPlacement::Floor;
+    UPROPERTY(EditAnywhere, meta = (ClampMin = "0.0", ClampMax = "1.0"))
+    float SpawnWeight = 1.0f;
+    UPROPERTY(EditAnywhere) int32 MaxDepth = 0;
+    UPROPERTY(EditAnywhere) TArray<TSoftObjectPtr<UStaticMesh>> ChildObjects;
+};
+
+USTRUCT(BlueprintType)
+struct FDungeonFloorConfig
+{
+    GENERATED_BODY()
+
+    UPROPERTY(EditAnywhere, meta = (ClampMin = "2")) int32 GridSizeX = 5;
+    UPROPERTY(EditAnywhere, meta = (ClampMin = "2")) int32 GridSizeY = 5;
+    UPROPERTY(EditAnywhere, meta = (ClampMin = "100.0")) float CellSize = 1000.f;
+    UPROPERTY(EditAnywhere) TArray<FDungeonObjectEntry> ObjectEntries;
+};
+
+UCLASS(BlueprintType)
+class UDungeonConfig : public UDataAsset
+{
+    GENERATED_BODY()
+public:
+    UPROPERTY(EditAnywhere, Category = "Seed") int32 Seed = 0;
+    UPROPERTY(EditAnywhere, Category = "Generation") int32 MaxObjectDepth = 3;
+    UPROPERTY(EditAnywhere, Category = "Generation", meta = (ClampMin = "0.0", ClampMax = "1.0"))
+    float RoomDensity = 0.6f;
+    UPROPERTY(EditAnywhere, Category = "Floors") TArray<FDungeonFloorConfig> Floors;
+};
+```
+
+`FDungeonObjectEntry.ChildObjects`로 부모→자식 재귀 배치(책상 위 촛대 등)를 지원하고, `MaxDepth`로 재귀 깊이를 제한합니다. PCG 그래프에서 이 DataAsset을 입력받아 Grid 생성 → MST 연결 → 구조물 배치 순서로 파이프라인을 실행합니다.
+
+</details>
+
 <p align="center">
   <img src="https://kimasill.github.io/images/PCGdungeon/%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%B2%98%EB%A6%AC.png" alt="DataAsset 파이프라인" width="560" />
 </p>
