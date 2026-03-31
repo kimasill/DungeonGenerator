@@ -48,7 +48,7 @@
 그리드 그래프를 생성한 뒤 MST(최소 신장 트리)로 분기 없이 모든 방이 연결된 던전 골격을 만듭니다.
 
 <p align="center">
-  <img src="https://kimasill.github.io/images/PCGdungeon/%EA%B7%B8%EB%9E%98%ED%94%84.png" alt="그래프 레이아웃" width="380" />
+  <img src="https://kimasill.github.io/images/PCGdungeon/%EB%A9%98%EC%85%98-%EB%A0%88%EC%9D%B4%EC%95%84%EC%9B%83.png" alt="그래프 레이아웃" width="380" />
   <img src="https://kimasill.github.io/images/PCGdungeon/%EA%B7%B8%EB%9E%98%ED%94%842.png" alt="그래프 레이아웃 2" width="380" />
 </p>
 
