@@ -1,2 +1,9 @@
 # Auto detect text files and perform LF normalization
 * text=auto
+
+# GitHub linguist: treat UE plugin content as C++
+*.cpp linguist-language=C++
+*.h linguist-language=C++
+*.cs linguist-language=C#
+*.ps1 linguist-vendored
+*.bat linguist-vendored
